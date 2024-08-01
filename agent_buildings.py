@@ -1,5 +1,10 @@
 import geopandas as gpd
-from cartagen4py.processes.AGENT import *
+from cartagen4py.processes.agent.core import *
+from cartagen4py.processes.agent.actions import *
+from cartagen4py.processes.agent.constraints import *
+from cartagen4py.processes.agent.agents import *
+from shapely.geometry import LineString
+import matplotlib as plt
 
 def test_block_agents(final_scale):
     buildings = [loads('Polygon ((426178.6 6252642.8, 426182.8 6252643.4, 426183.1 6252641.3, 426186 6252641.5, 426186.7 6252636.4, 426189.3 6252636.7, 426189.8 6252632.7, 426195.9 6252631.4, 426202.5 6252632.2, 426201.6 6252639.9, 426199.1 6252639.6, 426198.3 6252646, 426189.3 6252645.3, 426189.1 6252648.8, 426178.1 6252647.7, 426178.6 6252642.8))'),
@@ -25,10 +30,10 @@ def test_block_agents(final_scale):
         loads('LineString (426183.5 6252710.1, 426167.5 6252709.8)'),
         loads('LineString (426217.6 6252616, 426214.8 6252624.7, 426205.3 6252655.9, 426193 6252693.8, 426190 6252701.6, 426186.7 6252706.4, 426183.5 6252710.1)')]
     
-    p1 = geopandas.GeoSeries(buildings)
-    p3 = geopandas.GeoSeries(roads)
-    buildinggdf = geopandas.GeoDataFrame(geometry=geopandas.GeoSeries(p1))
-    roadgdf = geopandas.GeoDataFrame(geometry=geopandas.GeoSeries(p3))
+    p1 = gpd.GeoSeries(buildings)
+    p3 = gpd.GeoSeries(roads)
+    buildinggdf = gpd.GeoDataFrame(geometry=gpd.GeoSeries(p1))
+    roadgdf = gpd.GeoDataFrame(geometry=gpd.GeoSeries(p3))
     # print(roadgdf)
 
     # Create micro building agents
@@ -50,7 +55,7 @@ def test_block_agents(final_scale):
 
     # create the block from the roads
     blocks = polygonize(roads)
-    blockgdf = geopandas.GeoDataFrame(geometry=geopandas.GeoSeries(blocks))
+    blockgdf = gpd.GeoDataFrame(geometry=gpd.GeoSeries(blocks))
 
     road_sizes = []
     for road in roads:
@@ -78,7 +83,61 @@ def test_block_agents(final_scale):
             continue
         geoms_gen.append(agent.feature['geometry'])
     base = p1.plot()
-    p2 = geopandas.GeoSeries(geoms_gen)
+    p2 = gpd.GeoSeries(geoms_gen)
     p2.plot(ax=base, facecolor='none', edgecolor='red')
     p3.plot(ax=base, facecolor='none', edgecolor='red', linewidth=4)
     plt.show()
+
+# both layers should be shapefiles
+def create_faces(road_layer, urban_area_layer):
+    roads_df = gpd.read_file(road_layer)
+    series = roads_df['geometry']
+    # add the urban areas as lines in the series
+    urban_area_df = gpd.read_file(urban_area_layer)
+    for index, feature in urban_area_df.iterrows():
+        geom = LineString(feature['geometry'].exterior.coords)
+        series.add(geom)
+    return series.polygonize()
+
+def create_agents(faces_gdf, building_gdf, road_gdf, road_sizes, final_scale, building_min_size = 0.25, min_sep = 0.1, density_ratio = 0.75):
+    agents_to_activate = []
+    agents = []
+    building_agents = []
+    for index, feature in building_gdf.iterrows():
+        agent = BuildingAgent(feature)
+        agent.clean()
+        # add constraints (the values correspond to 1:35k with classical IGN specs)
+        squareness = BuildingSquarenessConstraint(1,agent)
+        size = BuildingSizeConstraint(1, agent, 0.2 * final_scale * final_scale)
+        granularity = BuildingGranularityConstraint(1, agent, 0.1 * final_scale)
+        agent.constraints.append(size)
+        agent.constraints.append(squareness)
+        agent.constraints.append(granularity)
+        agents.append(agent)
+        building_agents.append(agent)
+
+    for index, feature in faces_gdf.iterrows():
+        block_agent = BlockAgent(feature, building_agents, road_gdf)
+        # add constraints
+        activatemicros = ComponentsSatisfactionConstraint(1,block_agent)
+        block_agent.constraints.append(activatemicros)
+        proxi = BlockProximityConstraint(1,block_agent, min_sep * final_scale, road_sizes)
+        density = BlockDensityConstraint(1,block_agent, building_min_size * final_scale * final_scale, density_ratio, road_sizes)
+        block_agent.constraints.append(proxi)
+        block_agent.constraints.append(density)
+        agents.append(block_agent)
+        agents_to_activate.append(block_agent)
+
+    return agents, agents_to_activate
+
+def run_generalisation(agents, output_file):
+    run_agents(agents,verbose=1)
+
+    gen_buildings = []
+    for agent in agents:
+        if agent.deleted:
+            continue
+        gen_buildings.append([agent.feature['geometry'],agent.feature['nature']])
+    
+    new_df = gpd.GeoDataFrame(gen_buildings,geometry='geometry',columns=['geometry','nature'])
+    new_df.to_file(output_file)
