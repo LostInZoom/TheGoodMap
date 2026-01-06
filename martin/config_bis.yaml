@@ -13,8 +13,8 @@ postgres:
       - 0.8536529915354498
       - 43.90341710889538
       geometry_type: MULTILINESTRING
-      minzoom: 14
-      maxzoom: 17
+      minzoom: 8
+      maxzoom: 24
       properties:
         butt: varchar
         classe: varchar
@@ -24,28 +24,6 @@ postgres:
         id: varchar
         ogc_fid: int4
         selection: int4
-        sens: varchar
-    PlanIGN_n0_ini:
-      schema: public
-      table: PlanIGN_n0_ini
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.228451256984515
-      - 42.98397619572414
-      - 0.8536529915354498
-      - 43.90341710889538
-      geometry_type: MULTILINESTRING
-      minzoom: 15
-      maxzoom: 24
-      properties:
-        CLASSE: varchar
-        FXX: varchar
-        butt: varchar
-        f: varchar
-        f.1: varchar
-        id: int4
-        selection: int8
         sens: varchar
     PlanIGN_n10:
       schema: public
@@ -58,8 +36,8 @@ postgres:
       - 0.8785344062077377
       - 43.978628845848135
       geometry_type: MULTILINESTRING
-      minzoom: 13
-      maxzoom: 16
+      minzoom: 8
+      maxzoom: 24
       properties:
         butt: varchar
         glp: varchar
@@ -78,8 +56,8 @@ postgres:
       - 0.902762724697554
       - 43.97751179593852
       geometry_type: MULTILINESTRING
-      minzoom: 12
-      maxzoom: 15
+      minzoom: 8
+      maxzoom: 24
       properties:
         butt: varchar
         geometry: varchar
@@ -100,8 +78,8 @@ postgres:
       - 0.902762724697554
       - 43.97751179593852
       geometry_type: MULTILINESTRING
-      minzoom: 11
-      maxzoom: 14
+      minzoom: 8
+      maxzoom: 24
       properties:
         butt: varchar
         geometry: varchar
@@ -122,8 +100,8 @@ postgres:
       - 0.9684713634501072
       - 43.9675351609493
       geometry_type: MULTILINESTRING
-      minzoom: 9
-      maxzoom: 13
+      minzoom: 8
+      maxzoom: 24
       properties:
         butt: varchar
         geometry: varchar
@@ -143,7 +121,7 @@ postgres:
       - 0.8189090322897374
       - 43.886360610027836
       geometry_type: MULTILINESTRING
-      minzoom: 15
+      minzoom: 8
       maxzoom: 24
       properties:
         etat_max: varchar
@@ -163,8 +141,8 @@ postgres:
       - 0.8189090322897374
       - 43.886360610027836
       geometry_type: MULTILINESTRING
-      minzoom: 14
-      maxzoom: 16
+      minzoom: 8
+      maxzoom: 24
       properties:
         etat_max: varchar
         id: int8
@@ -183,8 +161,8 @@ postgres:
       - 0.8189090322897374
       - 43.886360610027836
       geometry_type: MULTILINESTRING
-      minzoom: 13
-      maxzoom: 16
+      minzoom: 8
+      maxzoom: 24
       properties:
         etat_max: varchar
         id: int4
@@ -203,8 +181,8 @@ postgres:
       - 0.8189148847297687
       - 43.886207410819765
       geometry_type: MULTILINESTRING
-      minzoom: 12
-      maxzoom: 15
+      minzoom: 8
+      maxzoom: 24
       properties:
         etat_max: varchar
         fid: int4
@@ -225,8 +203,8 @@ postgres:
       - 0.8189127471392845
       - 43.88626336657767
       geometry_type: MULTILINESTRING
-      minzoom: 11
-      maxzoom: 14
+      minzoom: 8
+      maxzoom: 24
       properties:
         fid: int4
         id: varchar
@@ -242,8 +220,8 @@ postgres:
       - 0.8190597841005041
       - 43.88241412514936
       geometry_type: MULTILINESTRING
-      minzoom: 10
-      maxzoom: 13
+      minzoom: 8
+      maxzoom: 24
       properties:
         fid: int4
         id: varchar
@@ -259,8 +237,8 @@ postgres:
       - 0.81924847799747
       - 43.87747361049427
       geometry_type: MULTILINESTRING
-      minzoom: 9
-      maxzoom: 12
+      minzoom: 8
+      maxzoom: 24
       properties:
         fid: int4
         id: varchar
@@ -276,134 +254,12 @@ postgres:
       - 0.784702315143486
       - 43.87015808508525
       geometry_type: MULTIPOLYGON
-      minzoom: 15
+      minzoom: 8
       maxzoom: 24
       properties:
         id: varchar
         nature: varchar
         ogc_fid: int4
-    hydro_10:
-      schema: public
-      table: hydro_10
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.185774787159381
-      - 43.019874019775926
-      - 0.7876833071859944
-      - 43.87621530591919
-      geometry_type: MULTILINESTRING
-      minzoom: 9
-      maxzoom: 12
-      properties:
-        artif: float8
-        id: int4
-        length: float8
-        non_perm: int4
-        order: int4
-        slength: float8
-    hydro_11:
-      schema: public
-      table: hydro_11
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.210666477685663
-      - 43.01890203255335
-      - 0.7876479673456263
-      - 43.877127472034736
-      geometry_type: MULTILINESTRING
-      minzoom: 10
-      maxzoom: 13
-      properties:
-        artif: float8
-        id: int4
-        length: float8
-        non_perm: int4
-        order: int4
-        slength: float8
-    hydro_12:
-      schema: public
-      table: hydro_12
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.2067217878053194
-      - 42.96462407512819
-      - 0.7876479673456263
-      - 43.877127472034736
-      geometry_type: MULTILINESTRING
-      minzoom: 11
-      maxzoom: 14
-      properties:
-        artif: float8
-        id: int4
-        length: float8
-        non_perm: int4
-        order: int4
-        slength: float8
-    hydro_13:
-      schema: public
-      table: hydro_13
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.2067217878053194
-      - 42.96462407512819
-      - 0.7930427848643812
-      - 43.877236702339694
-      geometry_type: MULTILINESTRING
-      minzoom: 12
-      maxzoom: 15
-      properties:
-        artif: float8
-        id: int4
-        length: float8
-        non_perm: int4
-        order: int4
-        perm: int4
-        slength: float8
-    hydro_14:
-      schema: public
-      table: hydro_14
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.2067217878053194
-      - 42.96462407512819
-      - 0.8022592282031348
-      - 43.87975260413304
-      geometry_type: MULTILINESTRING
-      minzoom: 13
-      maxzoom: 16
-      properties:
-        artif: float8
-        id: int4
-        length: float8
-        non_perm: int4
-        order: int4
-        perm: int4
-        slength: float8
-    hydro_15:
-      schema: public
-      table: hydro_15
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.2067217878053194
-      - 42.96462407512819
-      - 0.8019050028373529
-      - 43.88895441705764
-      geometry_type: MULTILINESTRING
-      minzoom: 14
-      maxzoom: 16
-      properties:
-        artif: float8
-        id: int4
-        id_count_2: int4
-        id_unique: int4
-        order: int4
-        slength: float8
     hydro_16:
       schema: public
       table: hydro_16
@@ -415,7 +271,7 @@ postgres:
       - 0.8019050028373529
       - 43.88895441705764
       geometry_type: MULTILINESTRING
-      minzoom: 15
+      minzoom: 6
       maxzoom: 24
       properties:
         agg: int4
@@ -429,6 +285,8 @@ postgres:
         order_min: int4
         rem: varchar
         slength: float8
+        min_zoom: int4
+        max_zoom: int4
     hydro_surf10:
       schema: public
       table: hydro_surf10
@@ -440,8 +298,8 @@ postgres:
       - 0.8892783686361605
       - 43.894690237127215
       geometry_type: MULTIPOLYGON
-      minzoom: 11
-      maxzoom: 14
+      minzoom: 8
+      maxzoom: 24
       properties:
         area: float8
         id: varchar
@@ -457,8 +315,8 @@ postgres:
       - 0.8890464151192374
       - 43.89451613190964
       geometry_type: MULTIPOLYGON
-      minzoom: 12
-      maxzoom: 15
+      minzoom: 8
+      maxzoom: 24
       properties:
         area: float8
         id: varchar
@@ -474,8 +332,8 @@ postgres:
       - 0.8890496968513224
       - 43.8945200816858
       geometry_type: MULTIPOLYGON
-      minzoom: 13
-      maxzoom: 16
+      minzoom: 8
+      maxzoom: 24
       properties:
         area: float8
         id: int4
@@ -490,8 +348,8 @@ postgres:
       - 0.8890496968513224
       - 43.8945200816858
       geometry_type: MULTIPOLYGON
-      minzoom: 14
-      maxzoom: 17
+      minzoom: 8
+      maxzoom: 24
       properties:
         area: float8
         id: int4
@@ -506,7 +364,7 @@ postgres:
       - 0.8890535160447074
       - 43.894522884578535
       geometry_type: MULTIPOLYGON
-      minzoom: 15
+      minzoom: 8
       maxzoom: 24
       properties:
         area: float8
@@ -522,7 +380,7 @@ postgres:
       - 0.7831098571107528
       - 43.86995469178236
       geometry_type: MULTIPOLYGON
-      minzoom: 14
+      minzoom: 8
       maxzoom: 24
       properties:
         acqu_alti: varchar
@@ -567,7 +425,7 @@ postgres:
       - 2.0294331315592786
       - 44.603676209353004
       geometry_type: MULTILINESTRING
-      minzoom: 0
+      minzoom: 8
       maxzoom: 24
       properties:
         code_siren: varchar
@@ -604,201 +462,6 @@ postgres:
         full_id: varchar
         osm_id: varchar
         osm_type: varchar
-  
-    points_zoom10:
-      schema: public
-      table: points_zoom10
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.0055752514350536
-      - 43.034119408333716
-      - 0.6948531847790761
-      - 43.87336759310029
-      geometry_type: POINT
-      minzoom: 9
-      maxzoom: 12
-      properties:
-        aire: int4
-        aire_2: int4
-        etat: varchar
-        fictif: varchar
-        id: varchar
-        id_0: int4
-        importance: varchar
-        layer: varchar
-        nat_detail: varchar
-        nature: varchar
-        niveau: int4
-        nom: varchar
-        ogc_fid: int4
-        path: varchar
-        prec_plani: int4
-        statut_top: varchar
-        toponyme: varchar
-        zl_tout: int4
-    points_zoom11:
-      schema: public
-      table: points_zoom11
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.167225557026488
-      - 43.025509764881406
-      - 0.6947225025549226
-      - 43.876604784331406
-      geometry_type: POINT
-      minzoom: 10
-      maxzoom: 13
-      properties:
-        aire: int4
-        etat: varchar
-        fictif: varchar
-        id: varchar
-        id_0: int4
-        importance: varchar
-        layer: varchar
-        nat_detail: varchar
-        nature: varchar
-        niveau: int4
-        nom: varchar
-        ogc_fid: int4
-        path: varchar
-        prec_plani: int4
-        statut_top: varchar
-        toponyme: varchar
-        zl_tout: int4
-    points_zoom12:
-      schema: public
-      table: points_zoom12
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.1829890469001016
-      - 43.024897675307834
-      - 0.78240321917527
-      - 43.8784216950711
-      geometry_type: POINT
-      minzoom: 11
-      maxzoom: 14
-      properties:
-        aire: int4
-        etat: varchar
-        fictif: varchar
-        id: varchar
-        id_0: int4
-        importance: varchar
-        layer: varchar
-        nat_detail: varchar
-        nature: varchar
-        niveau: int4
-        nom: varchar
-        ogc_fid: int4
-        path: varchar
-        prec_plani: int4
-        statut_top: varchar
-        toponyme: varchar
-        zl_tout: int4
-    points_zoom14:
-      schema: public
-      table: points_zoom14
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.1829559657099948
-      - 43.02443992903828
-      - 0.8011680166166203
-      - 43.878801373975016
-      geometry_type: POINT
-      minzoom: 12
-      maxzoom: 15
-      properties:
-        aire: int4
-        aire_2: int4
-        aire_3: int4
-        etat: varchar
-        fictif: varchar
-        id: varchar
-        id_0: int4
-        importance: varchar
-        layer: varchar
-        nat_detail: varchar
-        nature: varchar
-        niveau: int4
-        nom: varchar
-        ogc_fid: int4
-        path: varchar
-        prec_plani: int4
-        qrt_ville: int4
-        statut_top: varchar
-        toponyme: varchar
-        zl_tout: int4
-    points_zoom15:
-      schema: public
-      table: points_zoom15
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.1829559657099948
-      - 43.02443992903828
-      - 0.8011680166166203
-      - 43.878801373975016
-      geometry_type: POINT
-      minzoom: 13
-      maxzoom: 16
-      properties:
-        abrev: varchar
-        aire: int4
-        etat: varchar
-        fictif: varchar
-        id: varchar
-        id_0: int4
-        importance: varchar
-        layer: varchar
-        nat_detail: varchar
-        nature: varchar
-        niveau: int4
-        ogc_fid: int4
-        path: varchar
-        prec_plani: int4
-        qrt_ville: int4
-        statut_top: varchar
-        toponyme: varchar
-        toponyme2: varchar
-        zl_tout: int4
-    points_zoom16:
-      schema: public
-      table: points_zoom16
-      srid: 2154
-      geometry_column: geom
-      bounds:
-      - -1.1819113749761938
-      - 43.02448056185401
-      - 0.8014318372670345
-      - 43.871949429725284
-      geometry_type: POINT
-      minzoom: 14
-      maxzoom: 17
-      properties:
-        abrev: varchar
-        aire: int4
-        etat: varchar
-        fictif: varchar
-        id: varchar
-        id_0: int4
-        importance: varchar
-        layer: varchar
-        nat_detail: varchar
-        nature: varchar
-        niveau: int4
-        ogc_fid: int4
-        path: varchar
-        prec_plani: int4
-        qrt_ville: int4
-        statut_top: varchar
-        toponyme: varchar
-        toponyme2: varchar
-        zl_tout: int4
     points_zoom17:
       schema: public
       table: points_zoom17
@@ -810,7 +473,7 @@ postgres:
       - 0.8014318372670345
       - 43.871949429725284
       geometry_type: POINT
-      minzoom: 15
+      minzoom: 8
       maxzoom: 24
       properties:
         aire: int4
@@ -829,6 +492,8 @@ postgres:
         statut_top: varchar
         toponyme: varchar
         zl_tout: int4
+        min_zoom: int4
+        max_zoom: int4
     urban_area_zoom11:
       schema: public
       table: urban_area_zoom11
@@ -840,8 +505,8 @@ postgres:
       - 0.7270856851142546
       - 43.86905393103866
       geometry_type: MULTIPOLYGON
-      minzoom: 9
-      maxzoom: 12
+      minzoom: 8
+      maxzoom: 24
       properties:
         aire: int4
         fid: int4
@@ -858,8 +523,8 @@ postgres:
       - 0.7849779887912642
       - 43.87024875098493
       geometry_type: MULTIPOLYGON
-      minzoom: 10
-      maxzoom: 13
+      minzoom: 8
+      maxzoom: 24
       properties:
         aire: int4
         fid: int4
@@ -878,8 +543,8 @@ postgres:
       - 0.7849809459856549
       - 43.87037308337138
       geometry_type: MULTIPOLYGON
-      minzoom: 11
-      maxzoom: 14
+      minzoom: 8
+      maxzoom: 24
       properties:
         aire: int4
         fid: int4
@@ -898,8 +563,8 @@ postgres:
       - 0.7849869014437434
       - 43.870380361817446
       geometry_type: MULTIPOLYGON
-      minzoom: 12
-      maxzoom: 15
+      minzoom: 8
+      maxzoom: 24
       properties:
         FID: int8
         aire: int8
@@ -917,7 +582,7 @@ postgres:
       - 0.784995983278459
       - 43.8703844755051
       geometry_type: MULTIPOLYGON
-      minzoom: 13
+      minzoom: 8
       maxzoom: 24
       properties:
         FID: int8
@@ -936,7 +601,7 @@ postgres:
       - 0.8530606116605705
       - 43.913472340668584
       geometry_type: MULTIPOLYGON
-      minzoom: 11
+      minzoom: 8
       maxzoom: 24
       properties:
         field_4: varchar
@@ -956,8 +621,8 @@ postgres:
       - 1.0441029000753874
       - 43.8560169913782
       geometry_type: MULTIPOLYGON
-      minzoom: 9
-      maxzoom: 12
+      minzoom: 8
+      maxzoom: 24
       properties:
         geometry: varchar
         glp: varchar

@@ -1,4 +1,4 @@
-const defaultZoom = 10;
+const defaultZoom = 9;
 const mapCenter = [0, 43.5]; 
 
 const maxBounds = [
@@ -12,25 +12,35 @@ const map = new maplibregl.Map({
   style: './style.json',
   center: mapCenter,
   zoom: defaultZoom,
-  minZoom: 10,
+  minZoom: 8,
   maxZoom: 18,
   maxBounds: maxBounds
 });
 
 const zoomDiv = document.getElementById('zoom');
+
 map.on('zoom', () => {
-  zoomDiv.innerHTML = 'Zoom : ' + map.getZoom().toFixed(2);
+  const zRaw = map.getZoom();
+  const zCorrected = correctedZoom(map);
+
+  zoomDiv.innerHTML = `
+    Zoom MapLibre : ${zRaw.toFixed(2)}<br>
+    Zoom corrigé (OL / Google) : ${zCorrected.toFixed(2)}
+  `;
 });
 
 let lastZoom = map.getZoom();
 
-map.on('zoomend', () => {
-  const currentZoom = map.getZoom();
-  const zoomDifference = currentZoom - lastZoom;
 
-  if (zoomDifference >= 2) {
-    console.log(zoomDifference);
-  }
+function correctedZoom(map) {
+  const z = map.getZoom();
+  const lat = map.getCenter().lat;
 
-  lastZoom = currentZoom;
-});
+  const latRad = lat * Math.PI / 180;
+  const correction = Math.log2(Math.cos(latRad));
+
+  return z + correction;
+}
+
+
+
