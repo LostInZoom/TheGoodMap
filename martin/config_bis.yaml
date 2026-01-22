@@ -39,15 +39,13 @@ postgres:
       minzoom: 8
       maxzoom: 24
       properties:
-        butt: varchar
         glp: varchar
         id: varchar
         local: varchar
-        ogc_fid: int4
         selection: int4
-    PlanIGN_n25_reco:
+    PlanIGN_n25:
       schema: public
-      table: PlanIGN_n25_reco
+      table: PlanIGN_n25
       srid: 2154
       geometry_column: geom
       bounds:
@@ -59,13 +57,10 @@ postgres:
       minzoom: 8
       maxzoom: 24
       properties:
-        butt: varchar
-        geometry: varchar
         glp: varchar
-        id: varchar
-        locale: varchar
+        id: int4
+        local: varchar
         n25: varchar
-        ogc_fid: int4
         selection: int4
     PlanIGN_n30_bis:
       schema: public
@@ -89,9 +84,9 @@ postgres:
         n25: varchar
         ogc_fid: int4
         selection: int4
-    PlanIGN_n50_reco:
+    PlanIGN_n50:
       schema: public
-      table: PlanIGN_n50_reco
+      table: PlanIGN_n50
       srid: 2154
       geometry_column: geom
       bounds:
@@ -103,13 +98,11 @@ postgres:
       minzoom: 8
       maxzoom: 24
       properties:
-        butt: varchar
-        geometry: varchar
         glp: varchar
+        local: varchar
         id: varchar
         n50: varchar
-        ogc_fid: int4
-        regionale_: varchar
+        selection: varchar
     VF_2:
       schema: public
       table: VF_2
@@ -260,9 +253,9 @@ postgres:
         id: varchar
         nature: varchar
         ogc_fid: int4
-    hydro_16:
+    hydro:
       schema: public
-      table: hydro_16
+      table: hydro
       srid: 2154
       geometry_column: geom
       bounds:
@@ -274,17 +267,8 @@ postgres:
       minzoom: 6
       maxzoom: 24
       properties:
-        agg: int4
-        artif: float8
         id: int4
-        id_0: int4
-        id_count: int4
         order: int4
-        order_max: int4
-        order_medi: float8
-        order_min: int4
-        rem: varchar
-        slength: float8
         min_zoom: int4
         max_zoom: int4
     hydro_surf10:
@@ -440,31 +424,9 @@ postgres:
         insee_reg: varchar
         nom: varchar
         ogc_fid: int4
-    poi:
+    points:
       schema: public
-      table: poi
-      srid: 4326
-      geometry_column: geom
-      bounds:
-      - -1.2915991
-      - 43.0235371
-      - 0.8772249
-      - 43.9279442
-      geometry_type: POINT
-      minzoom: 0
-      maxzoom: 24
-      properties:
-        amenity: varchar
-        amenity:fr: varchar
-        amenity_1: varchar
-        amenity_2: varchar       
-        fid: int8
-        full_id: varchar
-        osm_id: varchar
-        osm_type: varchar
-    points_zoom17:
-      schema: public
-      table: points_zoom17
+      table: points
       srid: 2154
       geometry_column: geom
       bounds:
@@ -476,22 +438,10 @@ postgres:
       minzoom: 8
       maxzoom: 24
       properties:
-        aire: int4
-        etat: varchar
-        fictif: varchar
         id: varchar
-        id_0: int4
-        importance: varchar
-        layer: varchar
-        nat_detail: varchar
-        nature: varchar
         niveau: int4
         ogc_fid: int4
-        path: varchar
-        prec_plani: float8
-        statut_top: varchar
         toponyme: varchar
-        zl_tout: int4
         min_zoom: int4
         max_zoom: int4
     urban_area_zoom11:

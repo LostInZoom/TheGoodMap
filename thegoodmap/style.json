@@ -11,7 +11,7 @@
     "urban_area_zoom13": { "type": "vector", "tiles": ["http://localhost:3000/urban_area_zoom13/{z}/{x}/{y}"]},
     "urban_area_zoom14": { "type": "vector", "tiles": ["http://localhost:3000/urban_area_zoom14/{z}/{x}/{y}"]},
     "urban_area_zoom15": { "type": "vector", "tiles": ["http://localhost:3000/urban_area_zoom15/{z}/{x}/{y}"]},
-    "hydro_16": { "type": "vector", "tiles": ["http://localhost:3000/hydro_16/{z}/{x}/{y}"]},
+    "hydro": { "type": "vector", "tiles": ["http://localhost:3000/hydro/{z}/{x}/{y}"]},
     "hydro_surf10": { "type": "vector", "tiles": ["http://localhost:3000/hydro_surf10/{z}/{x}/{y}"]},
     "hydro_surf11temp": { "type": "vector", "tiles": ["http://localhost:3000/hydro_surf11temp/{z}/{x}/{y}"]},
     "hydro_surf12": { "type": "vector", "tiles": ["http://localhost:3000/hydro_surf12/{z}/{x}/{y}"]},
@@ -22,9 +22,9 @@
     "important_buildings": { "type": "vector", "tiles": ["http://localhost:3000/important_buildings/{z}/{x}/{y}"]},
     "PlanIGN_n0": { "type": "vector", "tiles": ["http://localhost:3000/PlanIGN_n0/{z}/{x}/{y}"]},
     "PlanIGN_n10": { "type": "vector", "tiles": ["http://localhost:3000/PlanIGN_n10/{z}/{x}/{y}"]},
-    "PlanIGN_n25_reco": { "type": "vector", "tiles": ["http://localhost:3000/PlanIGN_n25_reco/{z}/{x}/{y}"]},
+    "PlanIGN_n25": { "type": "vector", "tiles": ["http://localhost:3000/PlanIGN_n25/{z}/{x}/{y}"]},
     "PlanIGN_n30_bis": { "type": "vector", "tiles": ["http://localhost:3000/PlanIGN_n30_bis/{z}/{x}/{y}"]},
-    "PlanIGN_n50_reco": { "type": "vector", "tiles": ["http://localhost:3000/PlanIGN_n50_reco/{z}/{x}/{y}"]},
+    "PlanIGN_n50": { "type": "vector", "tiles": ["http://localhost:3000/PlanIGN_n50/{z}/{x}/{y}"]},
     "VF_2": { "type": "vector", "tiles": ["http://localhost:3000/VF_2/{z}/{x}/{y}"]},
     "VF_3": { "type": "vector", "tiles": ["http://localhost:3000/VF_3/{z}/{x}/{y}"]},
     "VF_4": { "type": "vector", "tiles": ["http://localhost:3000/VF_4/{z}/{x}/{y}"]},
@@ -32,13 +32,7 @@
     "VF_6": { "type": "vector", "tiles": ["http://localhost:3000/VF_6/{z}/{x}/{y}"]},
     "VF_7": { "type": "vector", "tiles": ["http://localhost:3000/VF_7/{z}/{x}/{y}"]},
     "VF_8": { "type": "vector", "tiles": ["http://localhost:3000/VF_8/{z}/{x}/{y}"]},
-    "points_zoom10": { "type": "vector", "tiles": ["http://localhost:3000/points_zoom10/{z}/{x}/{y}"]},
-    "points_zoom11": { "type": "vector", "tiles": ["http://localhost:3000/points_zoom11/{z}/{x}/{y}"]},
-    "points_zoom12": { "type": "vector", "tiles": ["http://localhost:3000/points_zoom12/{z}/{x}/{y}"]},
-    "points_zoom14": { "type": "vector", "tiles": ["http://localhost:3000/points_zoom14/{z}/{x}/{y}"]},
-    "points_zoom15": { "type": "vector", "tiles": ["http://localhost:3000/points_zoom15/{z}/{x}/{y}"]},
-    "points_zoom16": { "type": "vector", "tiles": ["http://localhost:3000/points_zoom16/{z}/{x}/{y}"]},
-    "points_zoom17": { "type": "vector", "tiles": ["http://localhost:3000/points_zoom17/{z}/{x}/{y}"]}
+    "points": { "type": "vector", "tiles": ["http://localhost:3000/points/{z}/{x}/{y}"]}
 
   },
   "layers": [
@@ -57,8 +51,8 @@
     "paint": {
       "fill-color": "#b6efcd"
     },
-    "minzoom": 8,
-    "maxzoom": 12
+    "minzoom": 7,
+    "maxzoom": 11
      },
   {
     "id": "vegetation_area_n25",
@@ -68,7 +62,7 @@
     "paint": {
       "fill-color": "#b6efcd"
     },
-    "minzoom": 12,
+    "minzoom": 11,
     "maxzoom": 24
     },
     {
@@ -79,8 +73,8 @@
     "paint": {
       "fill-color": "#f8f7f7"
     },
-    "minzoom": 8,
-    "maxzoom": 11
+    "minzoom": 7,
+    "maxzoom": 10
   },
    {
     "id": "urban_area_zoom12",
@@ -90,8 +84,8 @@
     "paint": {
       "fill-color": "#f8f7f7"
     },
-    "minzoom": 11,
-    "maxzoom": 12
+    "minzoom": 10,
+    "maxzoom": 11
   },
     {
     "id": "urban_area_zoom13",
@@ -101,8 +95,8 @@
     "paint": {
       "fill-color": "#f8f7f7"
     },
-    "minzoom": 12,
-    "maxzoom": 13
+    "minzoom": 11,
+    "maxzoom": 12
   },
   {
     "id": "urban_area_zoom14",
@@ -112,8 +106,8 @@
     "paint": {
       "fill-color": "#f8f7f7"
     },
-    "minzoom": 13,
-    "maxzoom": 14
+    "minzoom": 12,
+    "maxzoom": 13
   },
      {
     "id": "urban_area_zoom15",
@@ -123,7 +117,7 @@
     "paint": {
       "fill-color": "#f8f7f7"
     },
-    "minzoom": 14,
+    "minzoom": 13,
     "maxzoom": 24
   },
 
@@ -132,8 +126,8 @@
 {
   "id": "hydro_all",
   "type": "line",
-  "source": "hydro_16",
-  "source-layer": "hydro_16",
+  "source": "hydro",
+  "source-layer": "hydro",
   "filter": [
     "all",
     [">=", ["zoom"], ["get", "min_zoom"]],
@@ -221,8 +215,8 @@
     "fill-color": "#90daee",
     "fill-opacity": 1
   },
-  "minzoom": 12,
-  "maxzoom": 13
+  "minzoom": 11,
+  "maxzoom": 12
 }
     ,
     {
@@ -235,8 +229,8 @@
         "fill-color": "#90daee",
         "fill-opacity": 1
     },
-    "minzoom": 13,
-    "maxzoom": 14
+    "minzoom": 12,
+    "maxzoom": 13
     }
     ,
     {
@@ -249,8 +243,8 @@
         "fill-color": "#90daee",
         "fill-opacity": 1
     },
-    "minzoom": 14,
-    "maxzoom": 15
+    "minzoom": 13,
+    "maxzoom": 14
     }
     ,
    {
@@ -263,8 +257,8 @@
     "fill-color": "#90daee",
     "fill-opacity": 1
   },
-  "minzoom": 15,
-  "maxzoom": 16
+  "minzoom": 14,
+  "maxzoom": 15
 }
 ,
     {
@@ -279,7 +273,7 @@
     "fill-color": "#90daee",
     "fill-opacity": 1
   },
-  "minzoom": 16,
+  "minzoom": 15,
   "maxzoom": 24
 },
  {
@@ -308,7 +302,7 @@
         "fill-opacity": 1,
         "fill-outline-color": "#d3d3d3"
     },
-    "minzoom": 16,
+    "minzoom": 15,
     "maxzoom": 24
     }
 ,
@@ -323,7 +317,7 @@
     "fill-outline-color": "#767676",
     "fill-opacity": 1
   },
-  "minzoom": 15,
+  "minzoom": 14,
   "maxzoom": 24
 },
    
@@ -338,7 +332,7 @@
       "line-width": ["step", ["zoom"], 5, 16, 5]
     },
     "filter": ["==", ["get","selection"], 4],
-    "minzoom": 15,
+    "minzoom": 14,
     "maxzoom": 24
   }
 ,
@@ -353,7 +347,7 @@
       "line-width": ["step", ["zoom"], 10, 16, 10]
     },
     "filter": ["==", ["get","selection"], 3],
-    "minzoom": 15,
+    "minzoom": 14,
     "maxzoom": 24
   },
   
@@ -368,7 +362,7 @@
       "line-width": ["step", ["zoom"], 16, 16, 16]
     },
     "filter": ["==", ["get","selection"], 2],
-    "minzoom": 15,
+    "minzoom": 14,
     "maxzoom": 24
   },
 
@@ -383,7 +377,7 @@
       "line-width": ["step", ["zoom"], 16, 16, 16] 
     },
     "filter": ["==", ["get","selection"], 1],
-    "minzoom": 15,
+    "minzoom": 14,
     "maxzoom": 24
   },
  
@@ -401,8 +395,8 @@
       "line-width": 1
     },
     "filter": ["==", ["get", "selection"], 3],
-    "minzoom": 14,
-    "maxzoom": 15
+    "minzoom": 13,
+    "maxzoom": 14
   },
 
   {
@@ -419,8 +413,8 @@
       "line-width": 2.6
     },
     "filter": ["==", ["get", "selection"], 2],
-    "minzoom": 14,
-    "maxzoom": 15
+    "minzoom": 13,
+    "maxzoom": 14
   },
 
 
@@ -438,14 +432,14 @@
       "line-width": 2.8
     },
     "filter": ["==", ["get", "selection"], 1],
-    "minzoom": 14,
-    "maxzoom": 15
+    "minzoom": 13,
+    "maxzoom": 14
   },
   {
     "id": "PlanIGN_n25_reco_selection_3",
     "type": "line",
-    "source": "PlanIGN_n25_reco",
-    "source-layer": "PlanIGN_n25_reco",
+    "source": "PlanIGN_n25",
+    "source-layer": "PlanIGN_n25",
     "layout": {
       "line-join": "bevel",
       "line-cap": "square"
@@ -455,14 +449,14 @@
       "line-width": 1.2
     },
     "filter": ["==", ["get", "selection"], 3],
-    "minzoom": 13,
-    "maxzoom": 14
+    "minzoom": 12,
+    "maxzoom": 13
   },
     {
     "id": "PlanIGN_n25_reco_selection_2",
     "type": "line",
-    "source": "PlanIGN_n25_reco",
-    "source-layer": "PlanIGN_n25_reco",
+    "source": "PlanIGN_n25",
+    "source-layer": "PlanIGN_n25",
     "layout": {
       "line-join": "bevel",
       "line-cap": "square"
@@ -472,14 +466,14 @@
       "line-width": 2.5
     },
     "filter": ["==", ["get", "selection"], 2],
-    "minzoom": 13,
-    "maxzoom": 14
+    "minzoom": 11,
+    "maxzoom": 13
   },
       {
     "id": "PlanIGN_n25_reco_selection_1",
     "type": "line",
-    "source": "PlanIGN_n25_reco",
-    "source-layer": "PlanIGN_n25_reco",
+    "source": "PlanIGN_n25",
+    "source-layer": "PlanIGN_n25",
     "layout": {
       "line-join": "bevel",
       "line-cap": "square"
@@ -489,233 +483,46 @@
       "line-width": 2.9
     },
     "filter": ["==", ["get", "selection"], 1],
-    "minzoom": 13,
-    "maxzoom": 14
-  },
-    {
-    "id": "PlanIGN_n30_bis_selection_3",
-    "type": "line",
-    "source": "PlanIGN_n30_bis",
-    "source-layer": "PlanIGN_n30_bis",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#bacee7",
-      "line-width": 1
-    },
-    "filter": ["==", ["get", "selection"], 3],
-    "minzoom": 12,
+    "minzoom": 11,
     "maxzoom": 13
   },
 
-  {
-    "id": "PlanIGN_n30_bis_selection_2",
+
+    {
+    "id": "PlanIGN_n50_2",
     "type": "line",
-    "source": "PlanIGN_n30_bis",
-    "source-layer": "PlanIGN_n30_bis",    
+    "source": "PlanIGN_n50",
+    "source-layer": "PlanIGN_n50",
     "layout": {
       "line-join": "bevel",
       "line-cap": "square"
     },
     "paint": {
-      "line-color": "#a2b8d4",
+      "line-color": "#98aec9",
       "line-width": 2
     },
     "filter": ["==", ["get", "selection"], 2],
-    "minzoom": 12,
-    "maxzoom": 13
+    "minzoom": 7,
+    "maxzoom": 11
   },
-    {
-    "id": "PlanIGN_n30_bis_selection_1",
+  {
+    "id": "PlanIGN_n50_1",
     "type": "line",
-    "source": "PlanIGN_n30_bis",
-    "source-layer": "PlanIGN_n30_bis",
+    "source": "PlanIGN_n50",
+    "source-layer": "PlanIGN_n50",
     "layout": {
       "line-join": "bevel",
       "line-cap": "square"
     },
     "paint": {
       "line-color": "#7090b2",
-      "line-width": 2.8
+      "line-width": 3
     },
     "filter": ["==", ["get", "selection"], 1],
-    "minzoom": 12,
-    "maxzoom": 13
+    "minzoom": 7,
+    "maxzoom": 11
   },
-
-
-    {
-    "id": "PlanIGN_n50_LOCALE_1",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "LOCALE_1"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_AUTOROU_LIBRE",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#7090b2",
-      "line-width": 3
-    },
-    "filter": ["==", ["get", "regionale_"], "AUTOROU_LIBRE"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_LOCALE_2",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "LOCALE_2"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_PRINCIPALE_1",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "PRINCIPALE_1"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_PRINCIPALE_2",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "PRINCIPALE_2"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_PRINCIPALE_3",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "PRINCIPALE_3"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_PRINCIPALE_4",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "PRINCIPALE_4"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_REGIONALE_1",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "REGIONALE_1"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_REGIONALE_2",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#98aec9",
-      "line-width": 2
-    },
-    "filter": ["==", ["get", "regionale_"], "REGIONALE_2"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
-  {
-    "id": "PlanIGN_n50_AUTOROU_PEAGE",
-    "type": "line",
-    "source": "PlanIGN_n50_reco",
-    "source-layer": "PlanIGN_n50_reco",
-    "layout": {
-      "line-join": "bevel",
-      "line-cap": "square"
-    },
-    "paint": {
-      "line-color": "#7090b2",
-      "line-width": 3
-    },
-    "filter": ["==", ["get", "regionale_"], "AUTOROU_PEAGE"],
-    "minzoom": 8,
-    "maxzoom": 12
-  },
+ 
   {
     "id": "VF_2_voie_feree_principale_graphic",
     "type": "line",
@@ -731,7 +538,7 @@
       "line-dasharray": [0.1, 7.9]
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 16,
+    "minzoom": 15,
     "maxzoom": 24
   },
   {
@@ -749,7 +556,7 @@
       "line-dasharray": [6, 3, 2, 3]
     },
     "filter": ["==", ["get", "nature_max"], "Voie de service"],
-    "minzoom": 16,
+    "minzoom": 15,
     "maxzoom": 24
   }
   ,
@@ -767,7 +574,7 @@
       "line-width": 1.5
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 16,
+    "minzoom": 15,
     "maxzoom": 24
   }
   ,
@@ -785,8 +592,8 @@
       "line-width": 1.5
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 15,
-    "maxzoom": 16
+    "minzoom": 14,
+    "maxzoom": 15
   },
   {
     "id": "VF_3_voie_feree_principale_graphic",
@@ -804,8 +611,8 @@
       "line-dasharray": [0.1, 7.9]
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 15,
-    "maxzoom": 16
+    "minzoom": 14,
+    "maxzoom": 15
   },
   {
     "id": "VF_3_voie_de_service",
@@ -822,8 +629,8 @@
       "line-dasharray": [6, 3, 2, 3]
     },
     "filter": ["==", ["get", "nature_max"], "Voie de service"],
-    "minzoom": 15,
-    "maxzoom": 16
+    "minzoom": 14,
+    "maxzoom": 15
   },
     {
     "id": "VF_4_voie_feree_principale",
@@ -839,8 +646,8 @@
       "line-width": 1.5
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 14,
-    "maxzoom": 15
+    "minzoom": 13,
+    "maxzoom": 14
   },
   {
     "id": "VF_4_voie_feree_principale_graphic",
@@ -857,8 +664,8 @@
       "line-dasharray": [0.1, 7.9]
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 14,
-    "maxzoom": 15
+    "minzoom": 13,
+    "maxzoom": 14
   },
   {
     "id": "VF_4_voie_de_service",
@@ -875,8 +682,8 @@
       "line-dasharray": [6, 3, 2, 3]
     },
     "filter": ["==", ["get", "nature_max"], "Voie de service"],
-    "minzoom": 14,
-    "maxzoom": 15
+    "minzoom": 13,
+    "maxzoom": 14
   },
      {
     "id": "VF_5_voie_feree_principale",
@@ -892,8 +699,8 @@
       "line-width": 1.5
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 13,
-    "maxzoom": 14
+    "minzoom": 12,
+    "maxzoom": 13
   },
   {
     "id": "VF_5_voie_feree_principale_graphic",
@@ -910,8 +717,8 @@
       "line-dasharray": [0.1, 7.9]
     },
     "filter": ["==", ["get", "nature_max"], "Voie ferrée principale"],
-    "minzoom": 13,
-    "maxzoom": 14
+    "minzoom": 12,
+    "maxzoom": 13
   },
   {
     "id": "VF_5_voie_de_service",
@@ -928,8 +735,8 @@
       "line-dasharray": [6, 3, 2, 3]
     },
     "filter": ["==", ["get", "nature_max"], "Voie de service"],
-    "minzoom": 13,
-    "maxzoom": 14
+    "minzoom": 12,
+    "maxzoom": 13
   },
 {
     "id": "VF_6_single_symbol",
@@ -944,8 +751,8 @@
       "line-color": "#aeaeae",
       "line-width": 1.5
     },
-    "minzoom": 12,
-    "maxzoom": 13
+    "minzoom": 11,
+    "maxzoom": 12
   },
   {
     "id": "VF_6_single_symbol_graphic",
@@ -961,8 +768,8 @@
       "line-width": 8,
       "line-dasharray": [0.1, 7.9]
     },
-    "minzoom": 12,
-    "maxzoom": 13
+    "minzoom": 11,
+    "maxzoom": 12
   },{
     "id": "VF_7_single_symbol",
     "type": "line",
@@ -976,8 +783,8 @@
       "line-color": "#aeaeae",
       "line-width": 1.5
     },
-    "minzoom": 11,
-    "maxzoom": 12
+    "minzoom": 10,
+    "maxzoom": 11
   },
   {
     "id": "VF_7_single_symbol_graphic",
@@ -994,8 +801,8 @@
       "line-dasharray": [0.1, 7.9]
 
     },
-    "minzoom": 11,
-    "maxzoom": 12
+    "minzoom": 10,
+    "maxzoom": 11
   },
 
 
@@ -1014,8 +821,8 @@
       "line-color": "#aeaeae",
       "line-width": 1.5
     },
-    "minzoom": 8,
-    "maxzoom": 11
+    "minzoom": 7,
+    "maxzoom": 10
   },
   {
     "id": "VF_8_single_symbol_graphic",
@@ -1031,8 +838,8 @@
       "line-width": 5,
       "line-dasharray":  [0.1, 7.9]
     },
-    "minzoom": 8,
-    "maxzoom": 11
+    "minzoom": 7,
+    "maxzoom": 10
   },
 
 
@@ -1043,8 +850,8 @@
 {
     "id": "points_zoom17_niveau_1",
     "type": "symbol",
-    "source": "points_zoom17",
-    "source-layer": "points_zoom17",
+    "source": "points",
+    "source-layer": "points",
     "filter": [
       "all",
       ["==", ["get", "niveau"], 1],
@@ -1066,8 +873,8 @@
   {
     "id": "points_zoom17_niveau_2",
     "type": "symbol",
-    "source": "points_zoom17",
-    "source-layer": "points_zoom17",
+    "source": "points",
+    "source-layer": "points",
     "filter": [
       "all",
       ["==", ["get", "niveau"], 2],
@@ -1089,8 +896,8 @@
   {
     "id": "points_zoom17_niveau_3",
     "type": "symbol",
-    "source": "points_zoom17",
-    "source-layer": "points_zoom17",
+    "source": "points",
+    "source-layer": "points",
     "filter": [
       "all",
       ["==", ["get", "niveau"], 3],
@@ -1112,8 +919,8 @@
   {
     "id": "points_zoom17_niveau_4",
     "type": "symbol",
-    "source": "points_zoom17",
-    "source-layer": "points_zoom17",
+    "source": "points",
+    "source-layer": "points",
     "filter": [
       "all",
       ["==", ["get", "niveau"], 4],
